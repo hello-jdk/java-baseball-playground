@@ -23,12 +23,23 @@ public class HintManager {
         hintData.put(Hint.BALL, before + 1);
     }
 
-    public int getStrikeCount() {
-        return hintData.get(Hint.STRIKE);
+    public String getLiteralForOutput() {
+        Integer ballCount = hintData.get(Hint.BALL);
+        Integer strikeCount = hintData.get(Hint.STRIKE);
+        return makeLiteral(ballCount, strikeCount);
     }
 
-    public int getBallCount() {
-        return hintData.get(Hint.BALL);
+    private String makeLiteral(Integer ballCount, Integer strikeCount) {
+        if (ballCount == 0 && strikeCount == 0) {
+            return "낫싱";
+        }
+        if (ballCount == 0) {
+            return strikeCount + "스트라이크";
+        }
+        if (strikeCount == 0) {
+            return ballCount + "볼";
+        }
+        return ballCount + "볼 " + strikeCount + "스트라이크";
     }
 
     @Override
@@ -47,4 +58,5 @@ public class HintManager {
     public int hashCode() {
         return Objects.hash(hintData);
     }
+
 }

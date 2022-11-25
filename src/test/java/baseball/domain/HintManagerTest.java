@@ -21,25 +21,25 @@ class HintManagerTest {
         assertThat(hintManager).isEqualTo(newManager);
     }
 
-    @DisplayName("스트라이크 증가")
+    @DisplayName("출력용 Literal 스트라이크")
     @Test
-    void StrikeCount() {
+    void 스트라이크() {
         hintManager.updateStrike();
-        assertThat(hintManager.getStrikeCount()).isEqualTo(1);
+        assertThat(hintManager.getLiteralForOutput()).isEqualTo("1스트라이크");
         hintManager.updateStrike();
-        assertThat(hintManager.getStrikeCount()).isEqualTo(2);
+        assertThat(hintManager.getLiteralForOutput()).isEqualTo("2스트라이크");
         hintManager.updateStrike();
-        assertThat(hintManager.getStrikeCount()).isEqualTo(3);
+        assertThat(hintManager.getLiteralForOutput()).isEqualTo("3스트라이크");
     }
 
-    @DisplayName("볼 증가")
+    @DisplayName("출력용 Literal 볼")
     @Test
-    void BallCount() {
+    void 볼() {
         hintManager.updateBall();
-        assertThat(hintManager.getBallCount()).isEqualTo(1);
+        assertThat(hintManager.getLiteralForOutput()).isEqualTo("1볼");
         hintManager.updateBall();
-        assertThat(hintManager.getBallCount()).isEqualTo(2);
+        assertThat(hintManager.getLiteralForOutput()).isEqualTo("2볼");
         hintManager.updateBall();
-        assertThat(hintManager.getBallCount()).isEqualTo(3);
+        assertThat(hintManager.getLiteralForOutput()).isEqualTo("3볼");
     }
 }
