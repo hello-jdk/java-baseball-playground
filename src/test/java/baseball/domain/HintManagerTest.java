@@ -49,6 +49,6 @@ class HintManagerTest {
         hintManager.updateStrike();
         hintManager.updateStrike();
         hintManager.updateStrike();
-        assertThat(hintManager.isCorrect()).isTrue();
+        assertThat(hintManager.checkCorrect()).isTrue();
     }
 }

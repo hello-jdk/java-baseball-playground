@@ -1,6 +1,5 @@
 package baseball.domain;
 
-import baseball.RandomListGeneratorImpl;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,8 +14,7 @@ class BaseBallGameManagerTest {
     void beforeEach() {
         InputView inputView = new InputView();
         OutputView outputView = new OutputView();
-        NumberManager numberManager = new NumberManager(new RandomListGeneratorImpl());
-        baseBallGameManager = new BaseBallGameManager(inputView, outputView, numberManager);
+        baseBallGameManager = new BaseBallGameManager(inputView, outputView);
     }
 
     @DisplayName("게임 시작")

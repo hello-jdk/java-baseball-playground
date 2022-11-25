@@ -22,4 +22,15 @@ public class InputView {
         Validator.checkBoundary(number);
         Validator.checkDuplicate(number);
     }
+
+    public String readRestart() {
+        String number = sc.next();
+        validateRestart(number);
+        return number;
+    }
+
+    private void validateRestart(String number) {
+        Validator.checkIsNumber(number);
+        Validator.checkIsOneOrTwo(number);
+    }
 }

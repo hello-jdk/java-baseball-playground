@@ -38,4 +38,11 @@ public class Validator {
             throw new IllegalArgumentException("숫자는 서로 중복되지 않아야합니다.");
         }
     }
+
+    public static void checkIsOneOrTwo(String number) {
+        boolean isNotOneOrTwo = !(number.equals("1") || number.equals("2"));
+        if (isNotOneOrTwo) {
+            throw new IllegalArgumentException("1 또는 2 를 입력해주세요.");
+        }
+    }
 }

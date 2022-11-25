@@ -29,10 +29,10 @@ public class HintManager {
         return makeLiteral(ballCount, strikeCount);
     }
 
-    public boolean isCorrect() {
+    public boolean checkCorrect() {
         final int EXACT_CORRECT = 3;
         Integer strikeCount = hintData.get(Hint.STRIKE);
-        return strikeCount == EXACT_CORRECT;
+        return strikeCount != EXACT_CORRECT;
     }
 
     private String makeLiteral(Integer ballCount, Integer strikeCount) {
