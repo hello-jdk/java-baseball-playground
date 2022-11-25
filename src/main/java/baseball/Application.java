@@ -1,7 +1,7 @@
 package baseball;
 
-public class NumberBaseballGame {
+public class Application {
     public static void main(String[] args) {
-        
+
     }
 }

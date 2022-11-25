@@ -8,12 +8,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class ComputerTest {
-    private Computer computer;
+class NumberManagerTest {
+    private NumberManager numberManager;
 
     @BeforeEach
     void beforeEach() {
-        computer = new Computer(new RandomListGenerator() {
+        numberManager = new NumberManager(new RandomListGenerator() {
             @Override
             public List<Integer> generate() {
                 return List.of(1, 2, 3);
@@ -27,7 +27,7 @@ class ComputerTest {
         HintManager hintManager = new HintManager();
         hintManager.updateStrike();
 
-        assertThat(computer.calculateHint(List.of(1, 4, 5)))
+        assertThat(numberManager.calculateHint(List.of(1, 4, 5)))
                 .isEqualTo(hintManager);
     }
 
@@ -38,7 +38,7 @@ class ComputerTest {
         hintManager.updateStrike();
         hintManager.updateStrike();
 
-        assertThat(computer.calculateHint(List.of(1, 2, 5)))
+        assertThat(numberManager.calculateHint(List.of(1, 2, 5)))
                 .isEqualTo(hintManager);
     }
 
@@ -50,7 +50,7 @@ class ComputerTest {
         hintManager.updateStrike();
         hintManager.updateStrike();
 
-        assertThat(computer.calculateHint(List.of(1, 2, 3)))
+        assertThat(numberManager.calculateHint(List.of(1, 2, 3)))
                 .isEqualTo(hintManager);
     }
 
@@ -60,7 +60,7 @@ class ComputerTest {
         HintManager hintManager = new HintManager();
         hintManager.updateBall();
 
-        assertThat(computer.calculateHint(List.of(3, 4, 5)))
+        assertThat(numberManager.calculateHint(List.of(3, 4, 5)))
                 .isEqualTo(hintManager);
     }
 
@@ -71,7 +71,7 @@ class ComputerTest {
         hintManager.updateBall();
         hintManager.updateBall();
 
-        assertThat(computer.calculateHint(List.of(2, 1, 5)))
+        assertThat(numberManager.calculateHint(List.of(2, 1, 5)))
                 .isEqualTo(hintManager);
     }
 
@@ -83,7 +83,7 @@ class ComputerTest {
         hintManager.updateBall();
         hintManager.updateBall();
 
-        assertThat(computer.calculateHint(List.of(3, 2, 1)))
+        assertThat(numberManager.calculateHint(List.of(3, 2, 1)))
                 .isEqualTo(hintManager);
     }
 
@@ -94,7 +94,7 @@ class ComputerTest {
         hintManager.updateStrike();
         hintManager.updateBall();
 
-        assertThat(computer.calculateHint(List.of(1, 4, 2)))
+        assertThat(numberManager.calculateHint(List.of(1, 4, 2)))
                 .isEqualTo(hintManager);
     }
 
@@ -106,7 +106,7 @@ class ComputerTest {
         hintManager.updateBall();
         hintManager.updateBall();
 
-        assertThat(computer.calculateHint(List.of(2, 1, 3)))
+        assertThat(numberManager.calculateHint(List.of(2, 1, 3)))
                 .isEqualTo(hintManager);
     }
 
@@ -115,7 +115,7 @@ class ComputerTest {
     void nothing() {
         HintManager hintManager = new HintManager();
 
-        assertThat(computer.calculateHint(List.of(4, 5, 6)))
+        assertThat(numberManager.calculateHint(List.of(4, 5, 6)))
                 .isEqualTo(hintManager);
     }
 }

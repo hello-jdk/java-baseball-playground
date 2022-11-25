@@ -3,10 +3,10 @@ package baseball.domain;
 import baseball.RandomListGenerator;
 import java.util.List;
 
-public class Computer {
+public class NumberManager {
     final private List<Integer> numbers;
 
-    public Computer(RandomListGenerator randomListGenerator) {
+    public NumberManager(RandomListGenerator randomListGenerator) {
         numbers = randomListGenerator.generate();
     }
 
