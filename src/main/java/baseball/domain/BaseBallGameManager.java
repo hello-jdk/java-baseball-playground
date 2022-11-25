@@ -17,16 +17,22 @@ public class BaseBallGameManager {
         this.hintManager = new HintManager();
     }
 
+
     public void startGame() {
         outputView.startGameComment();
     }
 
-    public void PlayGame() {
+    public void playGame() {
         do {
             outputView.readNumberComment();
             String rawNumber = inputView.readNumber();
             hintManager = numberManager.calculateHint(Generator.makeUserNumber(rawNumber));
             OutputView.printHint(hintManager.getLiteralForOutput());
         } while (hintManager.isCorrect());
+        outputView.endGameComment();
+    }
+
+    public void afterGame() {
+
     }
 }

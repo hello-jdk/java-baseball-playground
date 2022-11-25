@@ -28,6 +28,6 @@ class BaseBallGameManagerTest {
     @DisplayName("게임(숫자 입력 - 힌트 출력) 반복")
     @Test
     void playGame() {
-        baseBallGameManager.PlayGame();
+        baseBallGameManager.playGame();
     }
 }
