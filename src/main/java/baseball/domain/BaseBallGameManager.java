@@ -38,10 +38,10 @@ public class BaseBallGameManager {
         numberManager = new NumberManager(new RandomListGeneratorImpl());
         outputView.endGameComment();
         outputView.printRestart();
-        checkRestart(inputView.readRestart());
+        updateRestart(inputView.readRestart());
     }
 
-    private void checkRestart(String readRestart) {
+    private void updateRestart(String readRestart) {
         if (readRestart.equals("1")) {
             this.restart = true;
         }
