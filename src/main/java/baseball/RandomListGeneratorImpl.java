@@ -11,7 +11,12 @@ public class RandomListGeneratorImpl implements RandomListGenerator {
         List<Integer> numbers = new ArrayList<>();
         final int LIST_SIZE = 3;
         for (int i = 0; i < LIST_SIZE; i++) {
-            numbers.add(generateRandomNumber());
+            int randNumber = generateRandomNumber();
+            if (numbers.contains(randNumber)) {
+                i--;
+                continue;
+            }
+            numbers.add(randNumber);
         }
         return numbers;
     }
