@@ -42,4 +42,13 @@ class HintManagerTest {
         hintManager.updateBall();
         assertThat(hintManager.getLiteralForOutput()).isEqualTo("3볼");
     }
+
+    @DisplayName("정답일 시")
+    @Test
+    void 정답() {
+        hintManager.updateStrike();
+        hintManager.updateStrike();
+        hintManager.updateStrike();
+        assertThat(hintManager.isCorrect()).isTrue();
+    }
 }

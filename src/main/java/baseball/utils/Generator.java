@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Generator {
-    public List<Integer> makeUserNumber(String number) {
+    public static List<Integer> makeUserNumber(String number) {
         Validator.checkIsNumber(number);
         List<Integer> numbers = new ArrayList<>();
         for (int cipher = 0; cipher < number.length(); cipher++) {

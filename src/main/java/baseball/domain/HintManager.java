@@ -29,6 +29,12 @@ public class HintManager {
         return makeLiteral(ballCount, strikeCount);
     }
 
+    public boolean isCorrect() {
+        final int EXACT_CORRECT = 3;
+        Integer strikeCount = hintData.get(Hint.STRIKE);
+        return strikeCount == EXACT_CORRECT;
+    }
+
     private String makeLiteral(Integer ballCount, Integer strikeCount) {
         if (ballCount == 0 && strikeCount == 0) {
             return "낫싱";
